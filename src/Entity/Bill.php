@@ -22,6 +22,9 @@ class Bill
     #[ORM\ManyToMany(targetEntity: product::class)]
     private $proname;
 
+    #[ORM\ManyToOne(targetEntity: Staff::class)]
+    private $staname;
+
     public function __construct()
     {
         $this->proname = new ArrayCollection();
@@ -64,6 +67,18 @@ class Bill
     public function removeProname(product $proname): self
     {
         $this->proname->removeElement($proname);
+
+        return $this;
+    }
+
+    public function getStaname(): ?Staff
+    {
+        return $this->staname;
+    }
+
+    public function setStaname(?Staff $staname): self
+    {
+        $this->staname = $staname;
 
         return $this;
     }
