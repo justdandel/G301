@@ -25,6 +25,9 @@ class Bill
     #[ORM\ManyToOne(targetEntity: Staff::class)]
     private $staname;
 
+    #[ORM\Column(type: 'integer')]
+    private $quantity;
+
     public function __construct()
     {
         $this->proname = new ArrayCollection();
@@ -79,6 +82,18 @@ class Bill
     public function setStaname(?Staff $staname): self
     {
         $this->staname = $staname;
+
+        return $this;
+    }
+
+    public function getQuantity(): ?int
+    {
+        return $this->quantity;
+    }
+
+    public function setQuantity(int $quantity): self
+    {
+        $this->quantity = $quantity;
 
         return $this;
     }
