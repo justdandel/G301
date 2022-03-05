@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="header">
+		<img src="{{ asset('img/header.jpg')}}">
+		<div class="name">
+			<span></span> J</p>
+			<span></span> U</p>
+			<span></span> I</p>
+			<span></span> C</p>
+			<span></span> E</p>
+			<span></span> &nbsp;</p>
+			<span></span> M</p>
+			<span></span> A</p>
+			<span></span> R</p>
+			<span></span> T</p>
+		</div>
+	</div>
+	<div class="nav">
+		<box-icon name='menu-alt-left' color='#d6d00a'></box-icon>
+		<ul>
+			<a href="{{path('home')}}">
+				<li>
+					<box-icon name='home' color='#d6d00a'></box-icon></box-icon>
+                    <span style="color:antiquewhite;"> Home</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<box-icon name='shopping-bag' color='#d6d00a'></box-icon>
+                    <span style="color:antiquewhite;"> Product</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<box-icon name='user' color='#d6d00a'></box-icon>
+                    <span style="color:antiquewhite;"> Admin Login</span>
+				</li>
+			</a>
+			<a href="">
+				<li>
+					<box-icon name='info-circle' color='#d6d00a'></box-icon>
+                    <span style="color:antiquewhite;"> About Us</span>
+				</li>
+			</a>
+		</ul>
+	</div>
+{% endblock %}
