@@ -34,3 +34,28 @@ a {
 span {
     position: absolute;
 }
+
+.main-product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.productbox {
+    margin: 50px;
+    text-align: center;
+}
+
+.headername {
+    display: flex;
+    justify-content: center;
+    color: rgb(211, 150, 19);
+    font-weight: bold;
+    font-size: 4.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+}

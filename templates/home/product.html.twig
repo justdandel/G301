@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<div class="headerimg">
+    <img src="{{asset('img/headertop.jpg')}}">
+    <div class="headername">   
+			<span></span> P</p>
+			<span></span> R</p>
+			<span></span> O</p>
+			<span></span> D</p>
+			<span></span> U</p>
+			<span></span> C</p>
+            <span></span> T</p>
+			<span></span> I</p>
+			<span></span> O</p>
+			<span></span> N</p>	
+    </div>
+</div>
+<div class="category" style="font-weight: bold; font-size: 1.5rem">
+    <p>Lonely Juice</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <p>&nbsp</p>
+    <p>Couple Juice</p>
+</div>
+
+<div class="main-product">
+    {% for product in products %}
+        <div class="productbox">
+        <img src="{{product.img}}" width="300" height="300">
+        <p>{{product.name}}</p>
+        <p>{{product.price}} $</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
