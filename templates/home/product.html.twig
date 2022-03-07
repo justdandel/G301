@@ -15,15 +15,32 @@
 			<span></span> N</p>	
     </div>
 </div>
-<div class="category" style="font-weight: bold; font-size: 1.5rem">
-    <p>Lonely Juice</p>
-    <p>&nbsp</p>
-    <p>&nbsp</p>
-    <p>&nbsp</p>
-    <p>&nbsp</p>
-    <p>&nbsp</p>
-    <p>&nbsp</p>
-    <p>Couple Juice</p>
+<div class="category" style="font-weight: bold; font-size: 1.4rem;">
+        <a href="{{path('product_index')}}"><p>All</p></a>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>|</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+    {% for category in categories %}
+    <a href="{{path('product_category', {'cateid' : category.id})}}"><p>{{category.name}}</p></a>
+    {% if category.name == "Lonely Juice"%}
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>|</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+        <p>&nbsp</p>
+    {% endif %}
+    
+    {% endfor %}
 </div>
 
 <div class="main-product">

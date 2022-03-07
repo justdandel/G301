@@ -53,9 +53,16 @@ span {
     font-weight: bold;
     font-size: 4.5rem;
     font-family: 'Courier New', Courier, monospace;
+    background-color: black;
 }
 
 .category {
     display: flex;
     justify-content: center;
+    color: rgb(211, 150, 19);
+    background-color: black;
+}
+
+.category>a {
+    color: rgb(211, 150, 19);
 }
