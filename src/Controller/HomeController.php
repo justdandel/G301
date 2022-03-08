@@ -6,7 +6,7 @@ use App\Entity\Category;
 use App\Entity\Product;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -39,6 +39,26 @@ class HomeController extends AbstractController
         [
             'products' => $product,
             'categories'=>$category
+        ]);
+    }
+
+    #[Route('/product/search', name: 'product_search')]
+    public function SearchProduction (Request $request, ProductRepository $repository){
+        $name = $request->get('search_product');
+        $product = $repository->SearchProduction($name);
+        $category = $this->getDoctrine()->getRepository(Category::class)->findAll();
+        return $this->render("home/product.html.twig",
+        [
+            'products'=> $product,
+            'categories' => $category
+        ]);
+    }
+
+    #[Route('/aboutus', name: 'aboutus')]
+    public function AboutUs()
+    {
+        return $this->render('home/aboutus.html.twig', [
+            
         ]);
     }
 }

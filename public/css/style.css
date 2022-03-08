@@ -66,3 +66,16 @@ span {
 .category>a {
     color: rgb(211, 150, 19);
 }
+
+.home>a {
+    margin-left: -500px;
+}
+
+.search {
+    position: absolute;
+    left: 1050px;
+}
+
+.search>input {
+    text-align: center;
+}
