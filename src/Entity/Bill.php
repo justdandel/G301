@@ -28,9 +28,13 @@ class Bill
     #[ORM\Column(type: 'integer')]
     private $quantity;
 
+    #[ORM\ManyToMany(targetEntity: Product::class)]
+    private $Prodname;
+
     public function __construct()
     {
         $this->proname = new ArrayCollection();
+        $this->Prodname = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -94,6 +98,30 @@ class Bill
     public function setQuantity(int $quantity): self
     {
         $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Product>
+     */
+    public function getProdname(): Collection
+    {
+        return $this->Prodname;
+    }
+
+    public function addProdname(Product $prodname): self
+    {
+        if (!$this->Prodname->contains($prodname)) {
+            $this->Prodname[] = $prodname;
+        }
+
+        return $this;
+    }
+
+    public function removeProdname(Product $prodname): self
+    {
+        $this->Prodname->removeElement($prodname);
 
         return $this;
     }
