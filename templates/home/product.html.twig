@@ -37,17 +37,19 @@
     {% endfor %}
     
 </div>
-<div class="search">
+<div class="search" >
         <form action="{{ path('product_search') }}" method="post">
             <input type="search" name="search_product" required class="form-control"
             placeholder="Ur wish" style="text-align: center;">
         </form>
     </div>
-<div class="main-product">
+{% endblock %}
+{% block product %}
+<div class="main-product" >
     {% for product in products %}
         <div class="productbox">
-        <img src="{{product.img}}" width="300" height="300">
-        <p>{{product.name}}</p>
+        <a href="{{path('description', {'desid' : product.id})}}" style="color: black"><img src="{{product.img}}" width="300" height="300">
+        <p>{{product.name}}</p></a>
         <p>{{product.price}} $</p>
         </div>
     {% endfor %}

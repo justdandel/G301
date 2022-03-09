@@ -61,4 +61,17 @@ class HomeController extends AbstractController
             
         ]);
     }
+
+    #[Route('/product/description/{desid}', name: 'description')]
+    public function ProductDescription($desid)
+    {
+        $product = $this->getDoctrine()->getRepository(Product::class)->find($desid);
+        $category = $this->getDoctrine()->getRepository(Category::class)->findAll();
+        return $this->render("home/productdes.html.twig",
+        [
+            'products' => $product,
+            'categories' => $category
+        ]);
+
+    }
 }

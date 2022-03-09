@@ -1,0 +1,18 @@
+{% extends "home/product.html.twig" %}
+
+{% block product %}
+<div class="product-description">
+    <div class="productboxdes">
+        <div class="img" style="padding-left:250px">
+            <img src="{{products.img}}" width="300" height="300">
+        </div>
+        <div class="information">
+            <h2>{{products.name}}</h2>
+            <p>{{products.description}}</p>
+            <p>Available: {{products.quantity}}</p>
+            <b>{{products.price}} $</b>
+        </div>
+        
+        </div>
+</div>
+{% endblock %}
