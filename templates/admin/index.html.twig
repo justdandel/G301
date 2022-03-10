@@ -43,7 +43,7 @@
                     <td align='center' style="border: 1px solid black; font-weight: bold;">
                         <img src='{{product.img}}' border='1px' width="150" height="150" />
                     </td>
-                    <td align='center' style="border: 1px solid black;"><a href="" >edit </a>
+                    <td align='center' style="border: 1px solid black;"><a href="{{path('admin_edit', {'id' : product.id})}}" >edit </a>
                 </td>
                     <td align='center' style="border: 1px solid black;"><a href="{{path('admin_del', {'id' : product.id})}}"  onclick="return deleteConfirm()">remove</a>
                 </td>
@@ -53,6 +53,6 @@
 </table>
 <div style=" text-align: center;"class="betb">
     <a style="padding-top: -10px; font-weight: bold;" href="{{ path('app_logout') }}">Logout</a>
-    <a style="padding-left: 50px; font-weight: bold;" href="">Add New</a>
+    <a style="padding-left: 50px; font-weight: bold;" href="{{path('admin_add')}}">Add New</a>
     </div>
 {% endblock %}
