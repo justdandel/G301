@@ -25,7 +25,6 @@ class AdminController extends AbstractController
     #[Route('/add', name: 'admin_add')]
     public function AdAddProduct(Request $request)
     {
-        $product = $this->getDoctrine()->getRepository(Product::class)->findAll();
         $product = new Product;
         $form = $this -> createForm(ProductType::class, $product);
         $form->handleRequest($request);
@@ -52,6 +51,7 @@ class AdminController extends AbstractController
     
     return $this->redirectToRoute('admin_index');
     }
+    
     #[Route('/edit/{id}', name: 'admin_edit')]
     public function AdEditProduct(Request $request, $id)
     {
@@ -67,6 +67,7 @@ class AdminController extends AbstractController
         return $this ->renderForm('admin/edit.html.twig',
         [
             'Productform' => $form,
+            'products' => $product
         ]);
         }          
 }

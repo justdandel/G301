@@ -39,10 +39,11 @@ span {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .productbox {
-    margin: 50px;
+    margin: 30px;
     text-align: center;
 }
 
@@ -113,4 +114,8 @@ body {
 
 .login {
     background-color: antiquewhite;
+}
+
+.productbox {
+    border-bottom: 1px solid;
 }

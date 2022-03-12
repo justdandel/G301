@@ -10,9 +10,12 @@
             <h2>{{products.name}}</h2>
             <p>{{products.description}}</p>
             <p>Available: {{products.quantity}}</p>
-            <b>{{products.price}} $</b>
+            <b>Price: {{products.price}} $</b>
+            <p></p>
+            <b>Total: {{(products.quantity)*(products.price)}} $</b>
         </div>
         
+
         </div>
 </div>
 {% endblock %}
